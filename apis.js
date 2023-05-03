@@ -1,0 +1,15 @@
+export default {
+  userlogin: 'user/login',
+  usergetuserinfo: 'user/get-user-info',
+  usergetuserinfobyopenid: 'user/get-user-info-by-openid',
+  userupdateuserinfo: 'user/update-user-info',
+  systemuploadfile: 'system/upload-file',
+  systemcreateactivityid: 'system/create-activity-id',
+  loversbindlovers: 'lovers/bind-lovers',
+  systemsubmitnote: 'system/submit-note',
+  systemgetnotesbydate: 'system/get-notes-by-date',
+  systemgetnotedetail: 'system/get-note-detail',
+  systemeditnote: 'system/edit-note',
+  userupdateuseremail: 'user/update-user-email',
+  loversunbindlovers: 'lovers/un-bind-lovers',
+}

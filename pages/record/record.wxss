@@ -1,0 +1,161 @@
+.container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+
+.list_box {
+  padding:  20rpx;
+  width: 100%;
+  height: calc(100% - env(safe-area-inset-bottom) - 20rpx);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.list_item {
+  position: relative;
+  margin-bottom: 40rpx;
+  padding: 40rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: var(--br-d);
+  box-shadow: 0 0 10rpx 0 #e0e0e0;
+  box-sizing: border-box;
+}
+.circle {
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  top: 40rpx;
+  right: 20rpx;
+  border: 4rpx solid #e0e0e0;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.operation_btn_box {
+  margin-top: 20rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 80rpx;
+  box-sizing: border-box;
+}
+.operation_btn {
+  width: 48%;
+  border: 4rpx solid #000000;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: var(--br-d);
+  box-sizing: border-box;
+}
+.operation_btn>text{
+  font-family: 'book';
+  letter-spacing: 6rpx;
+}
+.list_item>text {
+  display: block;
+  letter-spacing: 6rpx;
+  line-height: 60rpx;
+  font-family: 'book';
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.list_item>text:first-child {
+  margin-bottom: 30rpx;
+}
+
+.no_data_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 600rpx;
+  box-sizing: border-box;
+}
+.no_data_box>image{
+  width: 30%;
+}
+.no_data_box>text{
+  letter-spacing: 6rpx;
+  color: #999999;
+  font-family: 'book';
+}
+
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000090;
+  box-sizing: border-box;
+}
+
+.edit_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 40rpx);
+  padding: 20rpx;
+  border-radius: var(--br-d);
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.edit_box>textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'book';
+  height: 300rpx;
+  letter-spacing: 6rpx;
+  border-bottom: 4rpx solid #000000;
+}
+
+.edit_box>text {
+  position: absolute;
+  bottom: 10rpx;
+  right: 0;
+  font-family: 'book';
+  letter-spacing: 6rpx;
+}
+
+.edit_btn_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40rpx;
+  height: 80rpx;
+  box-sizing: border-box;
+}
+
+.edit_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: var(--br-d);
+  border: 4rpx solid #000000;
+  box-sizing: border-box;
+}
+
+.edit_btn>image {
+  margin-right: 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.edit_btn>text {
+  letter-spacing: 6rpx;
+  font-family: 'book';
+  color: #000000;
+}
+

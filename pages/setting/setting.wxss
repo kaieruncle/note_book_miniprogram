@@ -1,0 +1,121 @@
+.container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.setting_list {
+  padding: 0 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.setting_item {
+  padding: 20rpx 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 4rpx solid #000000;
+  box-sizing: border-box;
+}
+
+.setting_item>image {
+  margin-right: 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.setting_item>text {
+  letter-spacing: 6rpx;
+  font-family: 'book';
+}
+
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000090;
+  box-sizing: border-box;
+}
+
+
+.edit_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 40rpx);
+  padding: 20rpx;
+  border-radius: var(--br-d);
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.edit_box>input {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'book';
+  height: 80rpx;
+  letter-spacing: 6rpx;
+  font-family: 'book';
+  border-bottom: 4rpx solid #000000;
+}
+
+.edit_box>text {
+  position: absolute;
+  bottom: 10rpx;
+  right: 0;
+  font-family: 'book';
+  letter-spacing: 6rpx;
+}
+
+.edit_btn_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40rpx;
+  height: 80rpx;
+  box-sizing: border-box;
+}
+
+.edit_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: var(--br-d);
+  border: 4rpx solid #000000;
+  box-sizing: border-box;
+}
+
+.edit_btn>image {
+  margin-right: 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.edit_btn>text {
+  letter-spacing: 6rpx;
+  font-family: 'book';
+  color: #000000;
+}
+
+.tip_text {
+  margin-bottom: 20rpx;
+  width: 100%;
+}
+.tip_text>text{
+  font-family: 'book';
+}
+.tip_content{
+  width: 100%;
+}
+.tip_content>text{
+  letter-spacing: 6rpx;
+  font-family: 'book';
+}

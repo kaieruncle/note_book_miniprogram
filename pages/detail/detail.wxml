@@ -1,0 +1,21 @@
+<view class="container">
+  <!-- <view class="card"> -->
+  <view class="user_avatar">
+    <image src="{{data.avatarFullUrl}}"></image>
+  </view>
+  <view class="user_nick">
+    <text>{{data.nick}}</text>
+    <text>{{data.date}}</text>
+    <text>记了一笔仇</text>
+  </view>
+  <view class="content_box">
+    <text>{{data.content}}</text>
+  </view>
+  <view class="img_box">
+    <view class="img_item" wx:for="{{data.fileList}}" wx:key="index">
+      <image src="{{item.fullUrl}}" wx:if="{{item.type === 'jpg'}}" mode="widthFix"></image>
+      <video src="{{item.fullUrl}}" wx:if="{{item.type === 'mp4'}}"></video>
+    </view>
+  </view>
+  <!-- </view> -->
+</view>

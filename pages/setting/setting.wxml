@@ -1,0 +1,51 @@
+<view class="container">
+  <view class="setting_list">
+    <!-- <view class="setting_item" bindtap="subscribeMessage">
+      <image src="../../assets/notify.png"></image>
+      <text>重新订阅</text>
+    </view> -->
+    <view class="setting_item" bindtap="activeEditBox" wx:if="{{binded}}">
+      <image src="../../assets/email.png"></image>
+      <text>绑定/更换邮箱</text>
+    </view>
+    <view class="setting_item" bindtap="activeConfirmBox" wx:if="{{binded}}">
+      <image src="../../assets/cancel_bind_icon.png"></image>
+      <text>解绑关系</text>
+    </view>
+    <view class="setting_item" bindtap="contactUs">
+      <image src="../../assets/help.png"></image>
+      <text>联系客服</text>
+    </view>
+  </view>
+  <view class="mask" wx:if="{{editBoxVisible}}" bindtap="closeEditBox">
+    <view class="edit_box">
+      <input placeholder="请输入邮箱" model:value="{{email}}" catchtap="cancelBool" />
+      <view class="edit_btn_box">
+        <view class="edit_btn" catchtap="closeEditBox">
+          <text>取消</text>
+        </view>
+        <view class="edit_btn" catchtap="bindEmail">
+          <text>确定</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="mask" wx:if="{{confirmBoxVisible}}" bindtap="closeConfirmBox">
+    <view class="edit_box">
+      <view class="tip_text">
+        <text>提示</text>
+      </view>
+      <view class="tip_content">
+        <text>💔很遗憾，您确定和Ta解绑情侣关系吗？请思考10秒钟后在操作！</text>
+      </view>
+      <view class="edit_btn_box">
+        <view class="edit_btn" catchtap="closeConfirmBox">
+          <text>取消</text>
+        </view>
+        <view class="edit_btn" catchtap="unBind">
+          <text>{{confirmText}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

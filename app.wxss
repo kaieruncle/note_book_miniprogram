@@ -1,0 +1,8 @@
+page{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  --bs-c: #ebebeb;
+  --br-d: 6rpx;
+  --t-c: #303030;
+}

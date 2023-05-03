@@ -1,0 +1,46 @@
+<view class="container">
+  <view class="editor_box">
+    <view class="editor_bar">
+      <view class="editor_bar_item" bindtap="activeUploadBox">
+        <image src="../../assets/picture.png"></image>
+        <text>选取图片/视频</text>
+      </view>
+      <text wx:if="{{content}}">已记{{content.length}}字</text>
+    </view>
+    <textarea class="editor_pancel" placeholder="{{placeholder}}" model:value="{{content}}" maxlength="-1"></textarea>
+  </view>
+  <view class="img_box">
+    <view class="img_item" wx:for="{{fileList}}" wx:key="index">
+      <image src="{{item.fullUrl}}" wx:if="{{item.type === 'image'}}" mode="widthFix"></image>
+      <video src="{{item.fullUrl}}" wx:if="{{item.type === 'video'}}"></video>
+      <view class="delete_box" data-index="{{index}}" bindtap="delThis">
+        <image src="../../assets/del.png" mode="widthFix"></image>
+        <text>删除</text>
+      </view>
+    </view>
+  </view>
+  <view class="sub_btn_box">
+    <view class="sub_btn" bindtap="submitNote">
+      <image src="../../assets/submit_icon.png"></image>
+      <text>写完了，记下这笔仇</text>
+    </view>
+  </view>
+  <view class="desc_box" bindtap="toggleCheckBox" wx:if="{{binded}}">
+    <view class="check_box">
+      <image src="../../assets/check.png" wx:if="{{needNotify}}"></image>
+    </view>
+    <text>通知Ta</text>
+  </view>
+  <view class="mask" wx:if="{{uploadBoxVisible}}" bindtap="closeUploadBox">
+    <view class="upload_box">
+      <view class="upload_box_item" catchtap="chooseImgFromDevice">
+        <image src="../../assets/phone.png" mode="widthFix"></image>
+        <text>来自设备</text>
+      </view>
+      <view class="upload_box_item" catchtap="chooseImgFromMessage">
+        <image src="../../assets/chat_log.png" mode="widthFix"></image>
+        <text>来自聊天</text>
+      </view>
+    </view>
+  </view>
+</view>

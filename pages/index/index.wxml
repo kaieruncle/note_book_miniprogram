@@ -1,0 +1,84 @@
+<view class="container">
+  <view class="setting_box" style="top:{{menuBottom}}px" data-url="/pages/setting/setting" bindtap="navigate">
+    <image src="../../assets/setting.png"></image>
+    <text>设置</text>
+  </view>
+  <view class="banner" style="margin-top: {{menuBottom}}px;">
+    <image src="../../assets/banner.png" mode="widthFix"></image>
+  </view>
+  <view class="user-info-edit" wx:if="{{canIEditMyInfo}}">
+    <button class="avatar_wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image src="{{userInfo.avatarFullUrl}}" mode="widthFix"></image>
+    </button>
+    <input type="nickname" placeholder="请输入昵称" model:value="{{userInfo.nick}}" bindinput="changeUserNick" />
+    <view class="toggle_edit_btn" bindtap="toggleEditBtn">确定</view>
+  </view>
+  <view class="user-info" wx:if="{{!canIEditMyInfo}}">
+    <image class="avatar" src="{{userInfo.avatarFullUrl}}" mode="widthFix"></image>
+    <text class="nick_box">{{userInfo.nick}}</text>
+    <view class="toggle_edit_btn" bindtap="toggleEditBtn">修改</view>
+  </view>
+  <view class="active-area">
+    <button open-type="share" wx:if="{{!userInfo.binded}}" class="bind_box" bindtap="bindLover">
+      <image src="../../assets/lover.png" mode="widthFix"></image>
+      <text>去跟Ta绑定关系</text>
+    </button>
+    <view class="active-note-btn-row">
+      <view class="active-note-btn-row-item" bindtap="wakeUpCheckDateBox">
+        <image src="../../assets/book.png" mode="widthFix"></image>
+        <text>小本本</text>
+      </view>
+      <view class="active-note-btn-row-item" bindtap="knocking">
+        <image src="../../assets/card.png" mode="widthFix"></image>
+        <text>敲木鱼</text>
+        <text class="knocking_num" wx:for="{{knockingNum}}" wx:key="key">+{{item+1}}</text>
+      </view>
+    </view>
+    <view class="active-note-btn-full" data-url="/pages/create/create" bindtap="navigate">
+      <image src="../../assets/record_icon.png" mode="widthFix"></image>
+      <text>记一笔</text>
+    </view>
+    <view class="helper_box" bindtap="activeHelperBox">
+      <image src="../../assets/helper.png" mode="widthFix"></image>
+      <text>使用帮助</text>
+    </view>
+  </view>
+  <view class="mask" wx:if="{{checkDateBoxVisible}}" bindtap="closeCheckDateBox">
+    <view class="check_date_box">
+      <calendar id="calendar" isOpen="{{true}}" showHeader="{{false}}" multiple="{{false}}" bind:select="toListPage"></calendar>
+    </view>
+  </view>
+  <view class="mask" wx:if="{{helperBoxVisible}}" bindtap="closeHelperBox">
+    <view class="helper_content_box">
+      <view class="helper_content_row">
+        <text>两种模式</text>
+        <text>单独使用 / 情侣联动</text>
+      </view>
+      <view class="helper_content_row">
+        <text>默认“单独使用”模式</text>
+        <text>1、点击“记一笔”，当作笔记本使用，无通知功能。</text>
+        <image src="../../assets/single_create.jpg" mode="widthFix"></image>
+        <text>2、点击“小本本”选中日期，则会展示当天的历史记录。</text>
+        <image src="../../assets/single_date.jpg" mode="widthFix"></image>
+      </view>
+      <view class="helper_content_row">
+        <text>如何进入“情侣联动”模式</text>
+        <text>1、点击“去跟Ta绑定关系”，即可邀请发送至微信聊天。</text>
+        <image src="../../assets/share_home.jpg" mode="widthFix"></image>
+        <text>2、对方点击“和Ta绑定情侣关系”。</text>
+        <image src="../../assets/share_detail.jpg" mode="widthFix"></image>
+        <text>3、在“首页”-“设置”-“绑定/更换邮箱”中，绑定用来接收通知的邮箱。</text>
+        <image src="../../assets/bind_email.jpg" mode="widthFix"></image>
+        <text>4、此时点击“记一笔”，界面会多出“通知Ta”的可选项。</text>
+        <image src="../../assets/lovers_create.jpg" mode="widthFix"></image>
+        <text>5、若选中“通知Ta”，则该篇笔记内容会发送至Ta绑定的邮箱。</text>
+      </view>
+      <view class="helper_content_row">
+        <text>开发计划</text>
+        <text>1、增加笔记编辑功能</text>
+        <text>2、增加情侣间回复笔记功能</text>
+      </view>
+    </view>
+
+  </view>
+</view>

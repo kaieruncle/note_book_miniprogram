@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="card">
+    <view class="user_avatar">
+      <image src="{{initUserInfo.avatarFullUrl}}"></image>
+    </view>
+    <view class="user_nick">
+      <text>{{initUserInfo.nick}}</text>
+      <text>邀请你绑定情侣关系</text>
+    </view>
+    <view class="accept_btn" bindtap="subscribeMessage">
+      <text>♥ 和Ta绑定情侣关系</text>
+    </view>
+    <view class="accept_btn" bindtap="goHomePage">
+      <text>回到首页</text>
+    </view>
+    <!-- <view class="desc_box">
+      <text>订阅授权弹窗选择“总是允许”</text>
+      <text>顺畅接受Ta的小本本提醒</text>
+    </view> -->
+  </view>
+</view>

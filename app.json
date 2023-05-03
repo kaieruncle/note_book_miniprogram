@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/create/create",
+    "pages/confirm_bind/confirm_bind",
+    "pages/record/record",
+    "pages/detail/detail",
+    "pages/setting/setting"
+  ],
+  "usingComponents": {
+    "calendar": "/components/calendar/calendar"
+  },
+  "window": {},
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
